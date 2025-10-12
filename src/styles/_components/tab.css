@@ -1,0 +1,36 @@
+.tab__list-wrap {
+  @apply overflow-auto
+}
+.tab__list {
+  @apply flex gap-8 border-b min-w-full w-fit
+}
+.tab__item {
+  @apply pb-4 px-1 whitespace-nowrap relative -mb-px border-b duration-300
+}
+.tab__item[aria-selected="true"] {
+  @apply text-[var(--theme-500)] border-b-2 transition-colors border-[var(--theme-500)]
+}
+.tab__panel {
+  @apply mt-4
+}
+[role="tabpanel"]:target {
+  display: revert;
+}
+
+@media (any-hover: hover) {
+  .tab__item:not([aria-selected="true"]):hover {
+    @apply text-[var(--theme-500)]
+  }
+}
+
+@media (width <= $tb) {
+  .tab__list {
+    @apply gap-6
+  }
+}
+
+@media (width <= $sm) {
+  .tab__list {
+    @apply gap-4
+  }
+}

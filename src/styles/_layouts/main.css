@@ -1,0 +1,3 @@
+.main {
+  @apply pt-[var(--header-height)] overflow-hidden
+}

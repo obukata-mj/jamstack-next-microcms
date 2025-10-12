@@ -1,0 +1,98 @@
+.section__group {
+  @apply py-20 space-y-20
+}
+.section__bg {
+  @apply relative z-10
+}
+.section__container {
+  @apply max-w-[1168px] px-6 mx-auto space-y-12
+}
+.section__head {
+  @apply flex justify-between gap-4 items-center
+}
+.section__title {
+  @apply text-[1.625em] font-bold rounded-lg inline-block relative pl-[1.25em] leading-normal
+}
+.section__title::before {
+  @apply content-[''] absolute left-0 top-[.2em] icon-[basil--bookmark-solid] leading-none text-[var(--theme-500)]
+}
+.section__body {
+  @apply space-y-8
+}
+
+.section__grid {
+  @apply grid grid-cols-1 gap-8
+}
+
+.section__lv3 {
+  @apply space-y-8
+}
+.section__lv3-body {
+  @apply space-y-6
+}
+.section__lv3-title {
+  @apply text-[1.125em] font-bold
+}
+
+.section__lv4 {
+  @apply space-y-2
+}
+.section__lv4-body {
+  @apply space-y-1
+}
+.section__lv4-title {
+  @apply font-bold
+}
+
+@media (max-width: $pc) {
+  .section__group {
+    @apply py-16 space-y-16
+  }
+  .section__container {
+    @apply px-5 space-y-11
+  }
+  .section__body {
+    @apply space-y-7
+  }
+  .section__grid {
+    @apply grid-cols-1 gap-7
+  }
+
+  .section__lv3 {
+    @apply space-y-7
+  }
+  .section__lv3-body {
+    @apply space-y-5
+  }
+  .section__lv4 {
+    @apply space-y-1
+  }
+  .section__lv4-body {
+    @apply space-y-0
+  }
+}
+
+@media (max-width: $tb) {
+  .section__group {
+    @apply py-12 space-y-12
+  }
+  .section__container {
+    @apply px-4 space-y-9
+  }
+  .section__body {
+    @apply space-y-5
+  }
+  .section__grid {
+    @apply gap-5
+  }
+
+  .section__lv3 {
+    @apply space-y-5
+  }
+  .section__lv3-body {
+    @apply space-y-4
+  }
+  .section__lv4 {
+    @apply space-y-0
+  }
+}

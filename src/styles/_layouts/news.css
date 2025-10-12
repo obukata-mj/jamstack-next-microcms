@@ -1,0 +1,43 @@
+.news__header {
+  @apply flex items-center justify-between
+}
+.news__btn {
+  @apply fsz-14ptr
+}
+.news__body .pagination {
+  @apply mt-8
+}
+.news__item {
+  @apply border-t border-[#CACACA]
+}
+.news__item:last-of-type {
+  @apply border-b
+}
+.news__item-time {
+  @apply text-[0.875em] text-[var(--theme-500)] w-[7em] flex-shrink-0
+}
+.news__item-link {
+  @apply flex items-center gap-4 w-full px-4 pt-[21px] pb-[25px] duration-200
+}
+.news__item-link:hover {
+  @apply text-[var(--theme-400)]
+}
+.news__item-title {
+  @apply overflow-hidden text-ellipsis whitespace-nowrap
+}
+
+@media (width <= $md) {
+  .news__btn {
+    @apply text-[0.75em]
+  }
+}
+@media (width <= $tb) {
+  .news__item-link {
+    @apply px-2 py-4
+  }
+}
+@media (width <= $sm) {
+  .news__item-link {
+    @apply px-1 py-3
+  }
+}

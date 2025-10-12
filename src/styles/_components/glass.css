@@ -1,0 +1,6 @@
+.glass {
+  @apply relative z-10 rounded-2xl bg-[rgba(255_255_255/.1)] backdrop-blur-lg border border-[rgba(255_255_255/.4)]
+}
+.glass::before {
+  @apply content-[''] absolute -z-10 w-full h-full inset-0 rounded-2xl opacity-30 shadow-xl shadow-[var(--theme-700)];
+}

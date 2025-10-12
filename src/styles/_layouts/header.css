@@ -1,0 +1,112 @@
+.header {
+  @apply fixed top-0 left-0 right-0 z-40 shadow-xl
+}
+.header::before {
+  @apply content-[''] absolute inset-0  backdrop-blur-sm -z-10 duration-200
+}
+.header:has(.header__drawer[data-active="true"])::before {
+  @apply bg-white
+}
+.header__container {
+  @apply px-10 py-4 flex justify-between items-center bg-white
+}
+.header__logo {
+  @apply font-bold text-[var(--theme-500)] text-[1.4em]
+}
+.header__navigation-menu {
+  @apply flex flex-col items-end
+}
+.header__navigation-menu .menu__list {
+  @apply order-2
+}
+.header__navigation-menu .menu__list[data-menu="submenu"] {
+  @apply order-1
+}
+.header__navigation {
+  @apply justify-self-end flex-col
+}
+.header__open-button {
+  @apply hidden relative
+}
+:where(.header__open-button) {
+  &::before {
+    @apply content-[''] absolute inset-[-16px]
+  }
+  &[open] {
+    [data-icon="opened"] {
+      transform: rotateY(0deg);
+    }
+    [data-icon="closed"] {
+      transform: rotateY(180deg);
+    }
+  }
+  .header__toggle-drawer-icon {
+    perspective: 500px;
+    @apply relative block !space-y-0
+  }
+  .icon {
+    backface-visibility: hidden;
+    @apply fsz-32ptr align-bottom duration-500
+  }
+  [data-icon="opened"] {
+    transform: rotateY(180deg);
+    @apply absolute inset-0 m-auto
+  }
+  [data-icon="closed"] {
+    transform: rotateY(0deg);
+  }
+}
+.header__drawer {
+  @apply w-screen h-screen absolute top-0 bg-[var(--theme-50)] -z-20 text-[var(--theme-500)] opacity-0 hidden;
+  &:not([data-active="true"]) {
+    @apply -translate-y-full
+  }
+}
+.header__drawer[data-active="true"] {
+  animation: slideIn forwards 300ms ease-out;
+}
+.header__drawer[data-active="false"] {
+  animation: slideUp forwards 300ms ease-out;
+}
+.header__drawer-body {
+  @apply h-dvh mx-auto text-center overflow-auto pt-[calc(var(--header-height)+2.5rem)] pb-10
+}
+
+@media (width <= $pc) {
+  .header__container {
+    @apply px-8
+  }
+}
+@media (width <= $md) {
+  .header__container {
+    @apply px-6
+  }
+  .header__navigation {
+    @apply flex-row gap-4 items-center
+  }
+}
+@media (width <= $tb) {
+  .header__container {
+    @apply px-7
+  }
+  .header__navigation-menu {
+    @apply hidden
+  }
+  .header__navigation {
+    @apply flex
+  }
+  .header__open-button {
+    @apply block
+  }
+  .header__drawer {
+    @apply block
+  }
+  .header__drawer-body {
+    @apply pt-[calc(var(--header-height)+40px)] px-4 space-y-6
+  }
+}
+@media (width <= $sm) {
+  .header__container {
+    @apply py-3 px-6
+  }
+}

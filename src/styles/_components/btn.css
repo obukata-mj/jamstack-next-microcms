@@ -1,0 +1,34 @@
+.btn {
+  --inline: 1.7142857143em;
+  --block: 0.5714285714em;
+  --gap: 0.5714285714em;
+  @apply px-[var(--inline)] py-[var(--block)] rounded-[1.1428571429em] w-fit inline-flex justify-between items-center gap-[var(--gap)] duration-200
+}
+:where(.btn) {
+  .btn__body {
+    @apply flex items-center gap-2
+  }
+  .btn__append,
+  .btn__prepend {
+    @apply text-[1.7142857143em] flex items-center
+  }
+
+  &:not([data-style]) {
+    @apply bg-[var(--theme-500)] text-white;
+    &:hover {
+      @apply scale-95
+    }
+  }
+
+  &[data-style="text"] {
+    @apply -ml-[var(--inline)] font-bold relative;
+    &::after {
+      @apply content-[''] absolute bottom-0 left-[var(--inline)] w-0 h-0.5 bg-current duration-200
+    }
+    &:hover {
+      &::after {
+        @apply w-[calc(100%-(var(--inline)*2))]
+      }
+    }
+  }
+}

@@ -1,0 +1,60 @@
+.hero {
+  @apply relative h-[844px]
+}
+.hero__slider {
+  @apply w-full h-full
+}
+.hero__slider-item img {
+  @apply max-w-none w-full h-full object-cover
+}
+.hero__detail {
+  @apply absolute bottom-10 z-10 left-0 right-0 px-6
+}
+.hero__box {
+  @apply py-20 space-y-8 px-8 mx-auto max-w-[960px] bg-white/80
+}
+.hero__head {
+  @apply space-y-4
+}
+.hero__title {
+  @apply text-[2.625em] font-bold text-[var(--theme-500)] text-center leading-normal
+}
+.hero__infodata {
+  @apply flex gap-x-6 gap-y-3 justify-center flex-wrap
+}
+.hero__infodata-item {
+  @apply flex gap-2 items-center
+}
+.hero__infodata-title {
+  @apply bg-[var(--theme-500)] text-white rounded-lg px-2 text-[0.875em] leading-none inline-flex items-center py-2
+}
+.hero__infodata-text {
+  @apply leading-snug
+}
+
+@media (max-width: $pc) {
+  .hero {
+    @apply h-[600px]
+  }
+  .hero__box {
+    @apply py-12
+  }
+}
+@media (max-width: $md) {
+}
+@media (max-width: $tb) {
+  .hero {
+    @apply h-[600px]
+  }
+  .hero__box {
+    @apply py-8
+  }
+}
+@media (max-width: $sm) {
+  .hero {
+    @apply h-auto aspect-[480/380]
+  }
+  .hero__detail {
+    @apply static -mt-14 p-6 bg-[var(--theme-500)/40]
+  }
+}

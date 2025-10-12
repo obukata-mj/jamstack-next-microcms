@@ -1,0 +1,14 @@
+.address__box {
+  @apply rounded-2xl p-12
+}
+@media (max-width: $pc) {
+  .address__box {
+    @apply p-10
+  }
+}
+
+@media (max-width: $tb) {
+  .address__box {
+    @apply p-8
+  }
+}

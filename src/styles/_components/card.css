@@ -1,0 +1,33 @@
+.card {
+  @apply bg-white shadow-md rounded
+}
+.card__body {
+  @apply p-8
+}
+.card__foot {
+  @apply py-4 px-8
+}
+@media (width <= $md) {
+  .card__body {
+    @apply p-7
+  }
+  .card__foot {
+    @apply py-3 px-7
+  }
+}
+@media (width <= $tb) {
+  .card__body {
+    @apply p-6
+  }
+  .card__foot {
+    @apply py-2 px-6
+  }
+}
+@media (width <= $sm) {
+  .card__body {
+    @apply p-5
+  }
+  .card__foot {
+    @apply px-5
+  }
+}

@@ -1,0 +1,3 @@
+.input__text {
+  @apply block w-full rounded-md border-gray-300 shadow-sm focus:border-[var(--theme-500)] focus:ring focus:ring-[var(--theme-50)] focus:ring-opacity-50 placeholder:text-[#6b7280] placeholder:font-normal
+}

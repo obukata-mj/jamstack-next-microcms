@@ -1,0 +1,6 @@
+.logo {
+  @apply inline-flex items-center gap-2
+}
+.logo__symbol {
+  @apply w-[1.6em] aspect-1
+}

@@ -1,0 +1,12 @@
+.form__body {
+  @apply space-y-6
+}
+.form__item {
+  @apply space-y-2
+}
+.form__label {
+  @apply block text-gray-700 text-sm font-bold
+}
+.form__error {
+  @apply text-red-500 text-xs
+}

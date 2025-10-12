@@ -1,0 +1,124 @@
+.news-detail {
+  @apply p-4
+}
+.news-detail__card {
+  @apply max-w-4xl mx-auto bg-white/60
+}
+.news-detail__card-body {
+  @apply space-y-8
+}
+.news-detail__list {
+  @apply divide-y
+}
+.news-detail__item:first-of-type {
+  @apply pt-0
+}
+.news-detail__item:last-of-type {
+  @apply pb-0
+}
+.news-detail__item {
+  @apply py-14 space-y-6
+}
+.news-detail__title {
+  @apply font-bold fsz-24ptr text-[var(--theme-400)]
+}
+.news-detail__mainimage img {
+  @apply mx-auto
+}
+.news-detail__body {
+  @apply max-w-full
+}
+.news-detail__photo-wrap {
+  @apply space-y-2
+}
+.news-detail__photo-comment {
+  @apply bg-[var(--theme-50)] text-[var(--theme-600)] px-4 py-2 rounded-md fsz-13ptr w-fit
+}
+.news-detail__photo {
+  @apply grid grid-cols-5 gap-2 w-fit mx-auto
+}
+.news-detail__photo-item {
+  @apply aspect-1 overflow-hidden rounded-md
+}
+.news-detail__photo-item img {
+  @apply w-full h-full object-cover object-center
+}
+.news-detail__files-wrap {
+  @apply bg-[var(--theme-50)] rounded-md p-6
+}
+.news-detail__files-title {
+  @apply font-bold mb-2 fsz-14ptr text-[var(--theme-600)]
+}
+.news-detail__files {
+  @apply space-y-2
+}
+.news-detail__file-link {
+  @apply grid grid-cols-[auto_1fr] duration-200 gap-1
+}
+.news-detail__file-link:hover {
+  @apply underline
+}
+.news-detail__file-link .icon {
+  --size: 1.4em;
+  --half-offset-icon-position: calc((1lh - var(--size)) / 2);
+  @apply my-[var(--half-offset-icon-position)] text-[length:var(--size)] aspect-1
+}
+@media (width <= $tb) {
+  .news-detail__item {
+    @apply py-12
+  }
+  .news-detail__title {
+    @apply fsz-21ptr
+  }
+  .news-detail__body {
+    @apply fsz-14ptr
+  }
+  .news-detail__files-title {
+    @apply fsz-13ptr
+  }
+}
+@media (width <= $tb) {
+  .news-detail__item {
+    @apply py-11
+  }
+  .news-detail__title {
+    @apply fsz-19ptr
+  }
+  .news-detail__photo {
+    @apply grid-cols-4
+  }
+  .news-detail__photo-comment {
+    @apply fsz-12ptr
+  }
+  .news-detail__body {
+    @apply fsz-13ptr
+  }
+  .news-detail__files-title {
+    @apply fsz-12ptr
+  }
+}
+@media (width <= $sm) {
+  .news-detail__item {
+    @apply py-10
+  }
+  .news-detail__title {
+    @apply fsz-17ptr
+  }
+  .news-detail__photo {
+    @apply grid-cols-3
+  }
+  .news-detail__photo-comment {
+    @apply fsz-12ptr
+  }
+  .news-detail__body {
+    @apply fsz-12ptr
+  }
+  .news-detail__files-title {
+    @apply fsz-11ptr
+  }
+}
+@media (width <= $sp) {
+  .news-detail__photo {
+    @apply grid-cols-2
+  }
+}

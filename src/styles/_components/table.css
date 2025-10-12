@@ -1,0 +1,28 @@
+.table {
+  @apply border-b border-[var(--theme-200)]
+}
+.table__caption {
+  @apply text-left mb-4 text-[1.125em] font-bold
+}
+.table__thead .table__row {
+  @apply border-t-0
+}
+.table__thead .table__head {
+  @apply py-0 bg-transparent
+}
+.table__row {
+  @apply border-t border-[var(--theme-200)]
+}
+.table__head {
+  @apply bg-[var(--theme-50)] px-3 py-2 text-[var(--theme-600)] text-[0.8125em]
+}
+.table__description {
+  @apply px-3 py-2 bg-white
+}
+
+th {
+  @apply font-medium text-left align-top
+}
+th + td {
+  @apply pl-2
+}

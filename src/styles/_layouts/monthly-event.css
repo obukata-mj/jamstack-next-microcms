@@ -1,0 +1,50 @@
+.monthly-event__grid {
+  @apply grid grid-cols-3 gap-6
+}
+.monthly-event__item-head {
+  @apply text-center px-2 pb-2 pt-3 rounded-t-xl text-white
+}
+.monthly-event__item-body {
+  @apply overflow-auto rounded-b-xl px-4 pb-4 pt-2 h-[204px] bg-white/50
+}
+.monthly-event__event-item {
+  @apply flex gap-2 py-2.5 font-normal text-[0.875em]
+}
+.monthly-event__grid > *:nth-child(odd) {
+  .monthly-event__item-head {
+    @apply bg-[var(--theme-500)]
+  }
+}
+.monthly-event__grid > *:nth-child(even) {
+  .monthly-event__item-head {
+    @apply bg-[var(--theme-600)]
+  }
+}
+.monthly-event__event-item + .monthly-event__event-item {
+  @apply border-t border-dashed
+}
+.monthly-event__event-date {
+  @apply flex-shrink-0 opacity-60 w-[3em] text-right
+}
+.monthly-event__event-link {
+  @apply whitespace-nowrap overflow-hidden text-ellipsis underline hover:no-underline
+}
+
+@media (width <= $md) {
+  .monthly-event__item-body {
+    @apply h-[194px]
+  }
+}
+@media (width <= $tb) {
+  .monthly-event__grid {
+    @apply grid-cols-2
+  }
+  .monthly-event__item-body {
+    @apply h-[182px]
+  }
+}
+@media (width <= $tb) {
+  .monthly-event__grid {
+    @apply grid-cols-1
+  }
+}

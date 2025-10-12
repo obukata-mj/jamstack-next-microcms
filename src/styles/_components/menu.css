@@ -1,0 +1,66 @@
+.menu__list {
+  @apply flex items-center
+}
+:where(.menu__item) {
+  .btn {
+    @apply fsz-14ptr font-bold tracking-[0.07em]
+  }
+  &:has(.btn) {
+    @apply ml-4
+  }
+}
+.menu__link {
+  @apply font-bold tracking-[0.07em] px-4 py-2 flex items-center gap-[0.25em] relative
+}
+:where(.menu__link) {
+  &::after {
+    @apply content-[''] absolute bottom-0 left-0 right-0 mx-auto w-0 h-0.5 bg-[var(--theme-500)] duration-200
+  }
+  &:hover {
+    &::after {
+      @apply w-[calc(100%-(16px*2))]
+    }
+  }
+  [class^="icon"] {
+    @apply text-[1.5em] duration-200
+  }
+}
+
+.menu__list[data-menu="submenu"] {
+  @apply text-[.8em];
+}
+:where(.menu__list[data-menu="submenu"]) {
+  .menu__link {
+    @apply duration-200
+  }
+  :where(.menu__link) {
+    &::after {
+      @apply hidden
+    }
+    &:hover {
+      @apply text-[var(--theme-500)]
+    }
+    [class^="icon"] {
+      @apply text-[1.5em] duration-200
+    }
+  }
+}
+
+@media (width <= $md) {
+  .menu__link {
+    @apply px-2.5
+  }
+}
+@media (width <= $tb) {
+  .menu__list {
+    @apply flex-col
+  }
+  :where(.menu__link) {
+    &::after {
+      @apply hidden
+    }
+  }
+}
+
+@media (width <= $sm) {
+}
