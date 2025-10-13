@@ -1,0 +1,36 @@
+name: microCMS Deploy
+
+on:
+  repository_dispatch:
+    types: [microcms] # ← microCMSで設定したトリガー名
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: リポジトリのチェックアウト
+        uses: actions/checkout@v4
+
+      - name: Node.jsのセットアップ
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      # - name: パッケージのインストール
+      #   run: npm install
+
+      # - name: ビルド
+      #   run: npm run build
+
+      - name: SSH鍵のセットアップ
+        run: |
+          mkdir -p ~/.ssh
+          echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/github-actions
+          chmod 600 ~/.ssh/github-actions
+          ssh-keyscan -p 30032 wc5.mj-star.jp >> ~/.ssh/known_hosts
+
+      - name: Webサーバでデプロイ
+        run: |
+          ssh -i ~/.ssh/github-actions -p 30032 deployer@wc5.mj-star.jp \
+          "cd /home/deployer/sites/jamstack-next-microcms.mj-star.jp && git pull origin main && npm ci --prefix public && npm run build --prefix public"
