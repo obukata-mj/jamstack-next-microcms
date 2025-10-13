@@ -33,4 +33,4 @@ jobs:
       - name: Webサーバでデプロイ
         run: |
           ssh -i ~/.ssh/github-actions -p 30032 deployer@wc5.mj-star.jp \
-          "cd /home/deployer/sites/jamstack-next-microcms.mj-star.jp && git pull origin main && npm ci --prefix public && npm run build --prefix public"
+          "cd /home/deployer/sites/jamstack-next-microcms.mj-star.jp && git pull origin main && npm run build"
